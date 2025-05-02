@@ -9,7 +9,7 @@ const Table = () => {
 
     const fetchLeaves = async () => {
         try {
-            const response = await axios.get('hhttps://employee-api-hkw1.onrender.com/api/leave', {
+            const response = await axios.get('https://employee-api-hkw1.onrender.com/api/leave', {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem('token')}`
                 }
