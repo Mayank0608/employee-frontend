@@ -29,7 +29,7 @@ const List = () => {
                   dep_name: emp.department.dep_name,
                   name: emp.userId.name,
                   dob: new Date(emp.dob).toLocaleDateString(),
-                  profileImage: <img width={40} className='rounded-full' src = {`https://employee-api-hkw1.onrender.com/public/uploads${emp.userId.profileImage}`} />,
+                  profileImage: <img width={40} className='rounded-full' src = {`https://employee-api-hkw1.onrender.com/uploads${emp.userId.profileImage}`} />,
                   action: (<EmployeeButtons _id={emp._id} />),
                 }
               ));
