@@ -34,6 +34,7 @@ const List = () => {
                 }
               ));
               setEmployees(data);
+              
               setFilteredEmployees(data)
             }
           } catch (error) {
