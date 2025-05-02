@@ -29,12 +29,11 @@ const List = () => {
                   dep_name: emp.department.dep_name,
                   name: emp.userId.name,
                   dob: new Date(emp.dob).toLocaleDateString(),
-                  profileImage: <img width={40} className='rounded-full' src={emp.profileImage} />,
+                  profileImage: <img width={40} className='rounded-full' src={`https://employee-api-hkw1.onrender.com/${emp.userId.profileImage}`} />,
                   action: (<EmployeeButtons _id={emp._id} />),
                 }
               ));
               setEmployees(data);
-
               setFilteredEmployees(data)
             }
           } catch (error) {

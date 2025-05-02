@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom';
 const Add = () => {
     const [departments, setDepartments] = useState([]);
     const [formData, setFormData] = useState({})
-    const [imageUrl, setImageUrl] = useState(null);
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -21,28 +20,11 @@ const Add = () => {
     const handleChange = (e) => {
         const { name, value, files } = e.target
         if (name === "image") {
-            uploadImageToCloudinary(files[0]);
+            setFormData((prevData) => ({ ...prevData, [name]: files[0] }))
         } else {
             setFormData((prevData) => ({ ...prevData, [name]: value }))
         }
     }
-
-    const uploadImageToCloudinary = async (file) => {
-        const formData = new FormData();
-        formData.append('file', file);
-        formData.append('upload_preset', 'employee_images'); // Use your Cloudinary preset name
-
-        try {
-            const response = await axios.post(
-                'https://api.cloudinary.com/v1_1/dcmk35ibe/image/upload',
-                formData
-            );
-            // Get the URL of the uploaded image
-            setImageUrl(response.data.secure_url);
-        } catch (error) {
-            console.error('Error uploading image to Cloudinary:', error);
-        }
-    };
 
     const handleSubmit = async (e) => {
         e.preventDefault()
