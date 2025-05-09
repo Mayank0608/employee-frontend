@@ -46,7 +46,7 @@ const Login = () => {
         bg-gradient-to-b from-teal-600 from-50% to-gray-100 to-50% space-y-6"
         >
             <h2 style={{ fontFamily: "'Kaushan Script', cursive", fontSize: '28px', fontWeight: 'bold', color: 'white' }}>
-                Employee Performance And Effort Tracking System
+                Employee Management System
             </h2>
 
 
